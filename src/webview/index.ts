@@ -1,2 +1,2 @@
-export { StartView } from './start';
+export { TimelineView } from './timeline';
 export { NotificationsView } from './notifications';
