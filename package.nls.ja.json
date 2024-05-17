@@ -1,0 +1,8 @@
+{
+    "command-list": "Bluesky: コマンド一覧",
+    "command-timeline": "Bluesky: タイムライン",
+    "command-notifications": "Bluesky: 通知",
+    "setting-service": "ログインするサーバー",
+    "setting-user": "ユーザー名又はメールアドレス",
+    "setting-password": "アプリパスワード。アプリパスワードは公式アプリで設定したものを推奨します。"
+}
