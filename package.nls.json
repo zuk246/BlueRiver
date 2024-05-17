@@ -2,6 +2,7 @@
     "command-list": "Bluesky: Command List",
     "command-timeline": "Bluesky: Timeline",
     "command-notifications": "Bluesky: Notifications",
+    "command-like": "Bluesky: Like",
     "setting-service": "Service URL",
     "setting-user": "Username or email address",
     "setting-password": "App password. The app password set in the official app is recommended."

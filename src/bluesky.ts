@@ -67,4 +67,12 @@ export default class Bluesky {
             vscode.window.showErrorMessage('Failed to create new post');
         }
     }
+
+    public async like(uri: string, cid: string) {
+        try {
+            await this.agent.like(uri, cid);
+        } catch (_) {
+            vscode.window.showErrorMessage('Failed to like');
+        }
+    }
 }

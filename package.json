@@ -29,6 +29,11 @@
                 "command": "blueriver.notifications",
                 "title": "%command-notifications%",
                 "shortTitle": "Notifications"
+            },
+            {
+                "command": "blueriver.like",
+                "title": "%command-like%",
+                "shortTitle": "Like"
             }
         ],
         "configuration": {

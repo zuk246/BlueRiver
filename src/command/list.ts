@@ -19,6 +19,12 @@ const items: CommandItem[] = [
         iconPath: new vscode.ThemeIcon('edit'),
     },
     {
+        label: 'Like',
+        description: 'Like the post',
+        command: 'blueriver.like',
+        iconPath: new vscode.ThemeIcon('heart'),
+    },
+    {
         label: 'Notifications',
         description: 'Show the notifications',
         command: 'blueriver.notifications',

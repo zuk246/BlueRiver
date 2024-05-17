@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { NotificationsView, TimelineView } from './webview';
 import showStatusBar from './status_bar';
-import { listCommand, postCommand } from './command';
+import { listCommand, postCommand, likeCommand } from './command';
 
 export function activate(context: vscode.ExtensionContext) {
     // status bar
@@ -39,6 +39,11 @@ export function activate(context: vscode.ExtensionContext) {
         );
         const view = new NotificationsView(context.extensionUri);
         view.resolveWebviewView(panel);
+    });
+
+    // like
+    vscode.commands.registerCommand('blueriver.like', async () => {
+        await likeCommand();
     });
 }
 
