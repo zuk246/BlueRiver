@@ -7,7 +7,7 @@ export default class Bluesky {
     configuration: vscode.WorkspaceConfiguration | undefined;
 
     constructor() {
-        this.configuration = vscode.workspace.getConfiguration('bluesky');
+        this.configuration = vscode.workspace.getConfiguration('blueriver');
 
         this.agent = new BskyAgent({
             service: this.configuration.get('service') ?? 'https://bsky.social',
