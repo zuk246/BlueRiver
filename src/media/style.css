@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    padding: 1.5rem 0;
+}
+
+.subtitle {
+    padding: 0.5rem 0 0 0;
+    font-size: 16px;
+}
+
+/* timeline */
+.timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style-type: none;
+    padding: 1rem 0;
+    max-width: 600px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.timeline-item-second {
+    flex: 1 1 0%;
+}
+
+.timeline-item-detail {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 15px;
+}
+
+.timeline-item-detail-post {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.timeline-item-content {
+    margin: 0.2rem 0 0 0;
+}
+
+.timeline-item-status-counter {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin: 0.5rem 0 0 0;
+}
+
+.timeline-item-status-counter-item {
+    display: flex;
+    gap: 0.1rem;
+    align-items: center;
+}
+
+/* link card */
+.link-card {
+    margin: 0.5rem 0;
+}
+
+.link-card-a {
+    display: block;
+    text-decoration: none;
+}
+
+.link-card-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+}
+
+.link-card-url {
+    margin: 0.25rem 0 0 0;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.link-card-title {
+    margin: 0.1rem 0 0 0;
+}
+
+/* img */
+.images-card {
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+}
+
+.image-item {
+    margin: 0.5rem 0 0 0;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+}
+
+/* notifications */
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style-type: none;
+    padding: 1rem 0;
+    max-width: 600px;
+}
+
+.notification-card {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.notification-content {
+    flex: 1 1 0%;
+}
+
+.notification-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.notification-title {
+    font-size: 15px;
+    margin: 0.5rem 0 0 0;
+}
+
+.notification-author {
+    font-size: 15px;
+    font-weight: 700;
+}
