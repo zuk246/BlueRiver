@@ -1,41 +1,79 @@
 {
-  "name": "vscode-to-bluesky",
-  "displayName": "vscode-to-bluesky",
-  "description": "",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.89.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [],
-  "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "vscode-to-bluesky.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "pnpm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "pnpm run compile && pnpm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "vscode-test"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.89.0",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "18.x",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
-    "eslint": "^8.57.0",
-    "typescript": "^5.3.3",
-    "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9"
-  }
+    "name": "blueriver",
+    "displayName": "BlueRiver",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.89.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "blueriver.list",
+                "title": "%command-list%",
+                "shortTitle": "commands"
+            },
+            {
+                "command": "blueriver.timeline",
+                "title": "%command-timeline%",
+                "shortTitle": "Timeline"
+            },
+            {
+                "command": "blueriver.notifications",
+                "title": "%command-notifications%",
+                "shortTitle": "Notifications"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "BlueRiver",
+            "properties": {
+                "blueriver.service": {
+                    "type": "string",
+                    "default": "https://bsky.social",
+                    "description": "%setting-service%"
+                },
+                "blueriver.user": {
+                    "type": "string",
+                    "default": "",
+                    "description": "%setting-user%"
+                },
+                "blueriver.password": {
+                    "type": "string",
+                    "default": "",
+                    "description": "%setting-password%"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "pnpm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "pnpm run compile && pnpm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.6",
+        "@types/node": "~18.19.32",
+        "@types/vscode": "^1.89.0",
+        "@typescript-eslint/eslint-plugin": "^7.8.0",
+        "@typescript-eslint/parser": "^7.8.0",
+        "@vscode/test-cli": "^0.0.8",
+        "@vscode/test-electron": "^2.3.9",
+        "eslint": "^8.57.0",
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "@atproto/api": "^0.12.8",
+        "dayjs": "^1.11.11"
+    }
 }
