@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { Lang, langs } from '../data/lang';
+import Bluesky from '../bluesky';
 
 export default async function postCommand() {
     const text = await vscode.window.showInputBox({
@@ -24,11 +25,20 @@ export default async function postCommand() {
 
     const lang = await vscode.window.showQuickPick(langPickItems);
 
-    if (!lang) {
+    if (!lang || Object.keys(langs).indexOf(lang.label) === -1) {
         return;
     }
 
-    vscode.window.showInformationMessage(
-        `Posted: ${text} in ${lang.description}`
-    );
+    const bluesky = new Bluesky();
+    await bluesky.login();
+    await bluesky
+        .post(text, lang.label as Lang)
+        .then(() => {
+            vscode.window.showInformationMessage(
+                `Posted: ${text} in ${lang.description}`
+            );
+        })
+        .catch((_) => {
+            vscode.window.showErrorMessage(`Failed to post`);
+        });
 }
