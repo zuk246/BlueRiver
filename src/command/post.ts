@@ -31,14 +31,9 @@ export default async function postCommand() {
 
     const bluesky = new Bluesky();
     await bluesky.login();
-    await bluesky
-        .post(text, lang.label as Lang)
-        .then(() => {
-            vscode.window.showInformationMessage(
-                `Posted: ${text} in ${lang.description}`
-            );
-        })
-        .catch((_) => {
-            vscode.window.showErrorMessage(`Failed to post`);
-        });
+    await bluesky.post(text, lang.label as Lang).then(() => {
+        vscode.window.showInformationMessage(
+            `Posted: ${text} in ${lang.description}`
+        );
+    });
 }

@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 export default function getRelativeTime(date: string) {
     let relativeTime = -1 * dayjs(date).diff(dayjs(), 'minute');
 
-    if (relativeTime == 0) {
+    if (relativeTime === 0) {
         return 'now';
     }
 
