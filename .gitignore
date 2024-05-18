@@ -4,6 +4,8 @@ node_modules/*
 # vscode
 .vscode/*
 
+out/*
+
 # macOS
 .DS_Store
 .AppleDouble

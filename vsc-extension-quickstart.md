@@ -1,43 +1,58 @@
-# Welcome to your VS Code Extension
+# BlueRiver
 
-## What's in the folder
+![](./art/screenshot-1.png)
 
-* This folder contains all of the files necessary for your extension.
-* `package.json` - this is the manifest file in which you declare your extension and command.
-  * The sample plugin registers a command and defines its title and command name. With this information VS Code can show the command in the command palette. It doesn’t yet need to load the plugin.
-* `src/extension.ts` - this is the main file where you will provide the implementation of your command.
-  * The file exports one function, `activate`, which is called the very first time your extension is activated (in this case by executing the command). Inside the `activate` function we call `registerCommand`.
-  * We pass the function containing the implementation of the command as the second parameter to `registerCommand`.
+This is a VSCode extension for the client of Bluesky. It has features such as posts, timeline, notifications, and liking. It also has multi-column view and notification status bar. We plan to add more features in the future.
 
-## Get up and running straight away
+## Installation
 
-* Press `F5` to open a new window with your extension loaded.
-* Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `Hello World`.
-* Set breakpoints in your code inside `src/extension.ts` to debug your extension.
-* Find output from your extension in the debug console.
+1. Install this extension.
+2. Set your username and app password to settings.
 
-## Make changes
+    We recommend using the app password obtained from the official Bluesky app, which you can get [here](https://bsky.app/settings/app-passwords).
 
-* You can relaunch the extension from the debug toolbar after changing code in `src/extension.ts`.
-* You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to load your changes.
+    `"blueriver.user": "xxx.xxx"`
 
-## Explore the API
+    `"blueriver.password": "xxx-xxx-xxx"`
 
-* You can open the full set of our API when you open the file `node_modules/@types/vscode/index.d.ts`.
+## Usage
 
-## Run tests
+At startup, a status bar is added.
+And it can display a list of commands.
 
-* Install the [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Run the "watch" task via the **Tasks: Run Task** command. Make sure this is running, or tests might not be discovered.
-* Open the Testing view from the activity bar and click the Run Test" button, or use the hotkey `Ctrl/Cmd + ; A`
-* See the output of the test result in the Test Results view.
-* Make changes to `src/test/extension.test.ts` or create new test files inside the `test` folder.
-  * The provided test runner will only consider files matching the name pattern `**.test.ts`.
-  * You can create folders inside the `test` folder to structure your tests any way you want.
+![](./art/screenshot-2.png)
 
-## Go further
+-   Timeline
 
-* [Follow UX guidelines](https://code.visualstudio.com/api/ux-guidelines/overview) to create extensions that seamlessly integrate with VS Code's native interface and patterns.
- * Reduce the extension size and improve the startup time by [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
- * [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) on the VS Code extension marketplace.
- * Automate builds by setting up [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+    `blueriver.timeline`
+
+    Displays the home timeline of the logged-in user.
+
+-   Post
+
+    `blueriver.post`
+
+    Edit the text you want to post, select the language of the written text, and post.
+
+-   Like
+
+    `blueriver.like`
+
+    When you run it, your timeline will be displayed and you can select the post you want to like from it.
+
+-   Notifications
+
+    `blueriver.notifications`
+
+    This is a list of notifications for the logged-in user.
+
+-   command list
+
+    `blueriver.list`
+
+    This is a list of commands for this extension.
+
+## Links
+
+[<img src="https://img.shields.io/badge/GitHub-181717.svg?logo=github&style=for-the-badge" />](https://github.com/zuk246/BlueRiver)
+[<img src="https://img.shields.io/badge/-Buymeacoffee-FF813F.svg?logo=buymeacoffee&style=for-the-badge">](https://www.buymeacoffee.com/zuk246)

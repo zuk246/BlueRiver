@@ -1,71 +1,78 @@
-# vscode-to-bluesky README
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="./assets/blueriver-256.png" alt="Logo" width="90" height="90">
+  </a>
+  <h3 align="center">BlueRiver</h3>
+  <p align="center">
+    VSCode client for Bluesky
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>View VSCode Marketplace >></strong></a>
+    <br />
+    <br />
+  </p>
+</div>
 
-This is the README for your extension "vscode-to-bluesky". After writing up a brief description, we recommend including the following sections.
+## About
 
-## Features
+![](./art/screenshot-1.png)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This is a VSCode extension for the client of Bluesky. It has features such as posts, timeline, notifications, and liking. It also has multi-column view and notification status bar. We plan to add more features in the future.
 
-For example if there is an image subfolder under your extension project workspace:
+### Built With
 
-\!\[feature X\]\(images/feature-x.png\)
+-   VSCode
+-   Bluesky API
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Getting Started
 
-## Requirements
+### Requirement
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+-   Node.js
+-   VSCode
 
-## Extension Settings
+### Installation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Clone the repository.
 
-For example:
+```
+git clone https://github.com/zuk246/BlueRiver.git
+```
 
-This extension contributes the following settings:
+Install the node module dependencies.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+```
+pnpm install
+```
 
-## Known Issues
+When you didn't install pnpm, please run this command.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+```
+npm install -g pnpm
+```
 
-## Release Notes
+When you didn't have vscode, please install vscode from [here](https://code.visualstudio.com/download).
 
-Users appreciate release notes as you update your extension.
+press `F5` or run the command Debug: Start Debugging from the Command Palette (`⇧⌘P`). This will compile and run the extension in a new Extension Development Host window.
 
-### 1.0.0
+### Settings
 
-Initial release of ...
+1. Install this extension.
+2. Set your username and app password to settings.
 
-### 1.0.1
+    We recommend using the app password obtained from the official Bluesky app, which you can get [here](https://bsky.app/settings/app-passwords).
 
-Fixed issue #.
+    `"blueriver.user": "xxx.xxx"`
 
-### 1.1.0
+    `"blueriver.password": "xxx-xxx-xxx"`
 
-Added features X, Y, and Z.
+## License
 
----
+Licensed under the [MIT](LICENSE.md) license.
 
-## Following extension guidelines
+## Contact
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[<img src="https://img.shields.io/badge/GitHub-181717.svg?logo=github&style=for-the-badge" />](https://github.com/zuk246)
+[<img src="https://img.shields.io/badge/Bluesky-fff.svg?logo=bluesky&style=for-the-badge" />](https://bsky.app/profile/zuk246.net)
+[<img src="https://img.shields.io/badge/Twitter-fff.svg?logo=twitter&style=for-the-badge" />](https://x.com/zuk246)
+[<img src="https://img.shields.io/badge/-Buymeacoffee-FF813F.svg?logo=buymeacoffee&style=for-the-badge">](https://www.buymeacoffee.com/zuk246)
