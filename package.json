@@ -1,19 +1,33 @@
 {
     "name": "blueriver",
     "displayName": "BlueRiver",
-    "description": "",
-    "version": "0.0.1",
+    "description": "VSCode client for Bluesky",
+    "version": "1.0",
+    "icon": "./assets/blueriver-128.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zuk246/BlueRiver.git"
+    },
     "engines": {
         "vscode": "^1.89.0"
     },
     "categories": [
-        "Other"
+        "Chat"
     ],
     "activationEvents": [
         "*"
     ],
     "main": "./out/extension.js",
     "contributes": {
+        "icons": {
+            "bluesky-logo": {
+                "description": "Bluesky Logo",
+                "default": {
+                    "fontPath": "assets/bluesky.woff",
+                    "fontCharacter": "\\E900"
+                }
+            }
+        },
         "commands": [
             {
                 "command": "blueriver.list",
