@@ -16,10 +16,22 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand('blueriver.timeline', () => {
         const panel = vscode.window.createWebviewPanel(
             'timeline',
-            'Bluesky Timeline',
+            'Timeline',
             vscode.ViewColumn.One,
             {}
         );
+        panel.iconPath = {
+            light: vscode.Uri.joinPath(
+                context.extensionUri,
+                'assets',
+                'bluesky.svg'
+            ),
+            dark: vscode.Uri.joinPath(
+                context.extensionUri,
+                'assets',
+                'bluesky.svg'
+            ),
+        };
         const view = new TimelineView(context.extensionUri);
         view.resolveWebviewView(panel);
     });
@@ -33,10 +45,22 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand('blueriver.notifications', () => {
         const panel = vscode.window.createWebviewPanel(
             'notifications',
-            'Bluesky Notifications',
+            'Notifications',
             vscode.ViewColumn.One,
             {}
         );
+        panel.iconPath = {
+            light: vscode.Uri.joinPath(
+                context.extensionUri,
+                'assets',
+                'bluesky.svg'
+            ),
+            dark: vscode.Uri.joinPath(
+                context.extensionUri,
+                'assets',
+                'bluesky.svg'
+            ),
+        };
         const view = new NotificationsView(context.extensionUri);
         view.resolveWebviewView(panel);
     });
