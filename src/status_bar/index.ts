@@ -13,7 +13,9 @@ export default async function showStatusBar() {
     );
 
     status_bar.text =
-        unreadNotifications > 0 ? `${unreadNotifications} unread` : 'B';
+        unreadNotifications > 0
+            ? `$(bluesky-logo) ${unreadNotifications} unread`
+            : '$(bluesky-logo)';
     status_bar.command = 'blueriver.list';
 
     status_bar.show();
