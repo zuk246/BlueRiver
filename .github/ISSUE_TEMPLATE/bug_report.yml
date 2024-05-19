@@ -17,7 +17,7 @@ body:
             description: Describe how to reproduce your bug. Steps, code snippets, reproduction repos etc.
         validations:
             required: true
-    - type: input
+    - type: input:
         attributes:
             label: VSCode version
             description: What version of VSCode are you using?
