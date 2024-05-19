@@ -22,7 +22,9 @@ export default class Bluesky {
             });
             return;
         } catch (_) {
-            vscode.window.showErrorMessage('Failed to login');
+            vscode.window.showErrorMessage(
+                'Failed to login. Please check your configuration.'
+            );
         }
     }
 
