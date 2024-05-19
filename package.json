@@ -2,6 +2,7 @@
     "name": "blueriver",
     "displayName": "BlueRiver",
     "description": "VSCode client for Bluesky",
+    "publisher": "zuk246",
     "version": "1.0.0",
     "icon": "assets/blueriver-128.png",
     "repository": {
@@ -13,7 +14,7 @@
         "vscode": "^1.89.0"
     },
     "categories": [
-        "Chat"
+        "Other"
     ],
     "activationEvents": [
         "*"
