@@ -2,12 +2,13 @@
     "name": "blueriver",
     "displayName": "BlueRiver",
     "description": "VSCode client for Bluesky",
-    "version": "1.0",
-    "icon": "./assets/blueriver-128.png",
+    "version": "1.0.0",
+    "icon": "assets/blueriver-128.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/zuk246/BlueRiver.git"
     },
+    "license": "MIT",
     "engines": {
         "vscode": "^1.89.0"
     },
@@ -73,10 +74,11 @@
         }
     },
     "scripts": {
-        "vscode:prepublish": "pnpm run compile",
+        "vscode:prepublish": "npm run compile",
+        "package": "vsce package",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "pretest": "pnpm run compile && pnpm run lint",
+        "pretest": "npm run compile && npm run lint",
         "lint": "eslint src --ext ts",
         "test": "vscode-test"
     },
