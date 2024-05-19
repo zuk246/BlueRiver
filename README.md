@@ -1,13 +1,13 @@
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/zuk246/BlueRiver">
     <img src="./assets/blueriver-256.png" alt="Logo" width="90" height="90">
   </a>
   <h3 align="center">BlueRiver</h3>
   <p align="center">
     VSCode client for Bluesky
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>View VSCode Marketplace >></strong></a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=zuk246.blueriver"><strong>View VSCode Marketplace >></strong></a>
     <br />
     <br />
   </p>
