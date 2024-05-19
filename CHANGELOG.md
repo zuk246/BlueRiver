@@ -1,9 +1,9 @@
 # Change Log
 
-All notable changes to the "vscode-to-bluesky" extension will be documented in this file.
+## v1.0
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+-   Bluesky settings and login
+-   Timeline View
+-   Notifications View
+-   Post command
+-   Like command
