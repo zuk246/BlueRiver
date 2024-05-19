@@ -9,7 +9,7 @@ export class TimelineView {
         webviewView.webview.options = {};
 
         const styleUri = webviewView.webview.asWebviewUri(
-            vscode.Uri.joinPath(this.extensionUri, 'src', 'media', 'style.css')
+            vscode.Uri.joinPath(this.extensionUri, 'media', 'style.css')
         );
 
         const bluesky = new Bluesky();
