@@ -1,0 +1,9 @@
+{
+    "command-list": "Bluesky: Lista de comandos",
+    "command-timeline": "Bluesky: Línea de tiempo",
+    "command-notifications": "Bluesky: Notificaciones",
+    "command-like": "Bluesky: Como",
+    "setting-service": "URL del servicio",
+    "setting-user": "Nombre de usuario o dirección de correo electrónico",
+    "setting-password": "Contraseña de la aplicación. Se recomienda la contraseña de la aplicación establecida en la aplicación oficial."
+}
