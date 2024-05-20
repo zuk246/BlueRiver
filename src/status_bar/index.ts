@@ -14,11 +14,8 @@ export default function showStatusBar() {
 
     status_bar.show();
 
-    const bluesky = new Bluesky();
-
     setInterval(async () => {
-        status_bar.show();
-
+        const bluesky = new Bluesky();
         await bluesky.login();
 
         const unreadNotifications = await bluesky.notificationCount();
