@@ -1,0 +1,9 @@
+{
+    "command-list": "Bluesky: 命令列表",
+    "command-timeline": "Bluesky: 时间线",
+    "command-notifications": "Bluesky: 通知",
+    "command-like": "Bluesky: 点赞",
+    "setting-service": "服务网址",
+    "setting-user": "用户名或邮箱",
+    "setting-password": "应用密码，建议使用官方应用中设置的应用密码。"
+}
