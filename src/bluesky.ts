@@ -14,6 +14,10 @@ export default class Bluesky {
         });
     }
 
+    private resetConfiguration() {
+        this.configuration = vscode.workspace.getConfiguration('blueriver');
+    }
+
     public async login() {
         try {
             await this.agent.login({
@@ -21,10 +25,25 @@ export default class Bluesky {
                 password: this.configuration?.get('password') ?? '',
             });
             return;
-        } catch (_) {
-            vscode.window.showErrorMessage(
-                'Failed to login. Please check your configuration.'
+        } catch (e) {
+            const message = vscode.window.showErrorMessage(
+                'Failed to login. Please check your configuration.',
+                'Open settings',
+                'Retry'
             );
+
+            message.then((value) => {
+                if (value === 'Open settings') {
+                    vscode.commands.executeCommand(
+                        'workbench.action.openSettings',
+                        'blueriver'
+                    );
+                }
+                if (value === 'Retry') {
+                    this.resetConfiguration();
+                    this.login();
+                }
+            });
         }
     }
 
@@ -58,7 +77,7 @@ export default class Bluesky {
         }
     }
 
-    public async post(text: string, lang: Lang) {
+    public async post(text: string, lang: string) {
         try {
             await this.agent.post({
                 text: text,
