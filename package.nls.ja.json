@@ -3,7 +3,9 @@
     "command-timeline": "Bluesky: タイムライン",
     "command-notifications": "Bluesky: 通知",
     "command-like": "Bluesky: いいねをする",
+
     "setting-service": "ログインするサーバー",
     "setting-user": "ユーザー名又はメールアドレス",
-    "setting-password": "アプリパスワード。アプリパスワードは公式アプリで設定したものを推奨します。"
+    "setting-password": "アプリパスワード。アプリパスワードは公式アプリで設定したものを推奨します。",
+    "setting-lang": "デフォルトの言語。639-1で指定する必要があります。(ja, en, ...)"
 }

@@ -3,7 +3,14 @@
     "command-timeline": "Bluesky: Timeline",
     "command-notifications": "Bluesky: Notifications",
     "command-like": "Bluesky: Like",
+
     "setting-service": "Service URL",
     "setting-user": "Username or email address",
-    "setting-password": "App password. The app password set in the official app is recommended."
+    "setting-password": "App password. The app password set in the official app is recommended.",
+    "setting-lang": "Default Language. Must be specified as 639-1. (e.g. en, ja)",
+
+    "app-post-message": "What`s up?",
+    "app-post-select-lang": "Select a language",
+    "app-post-done": "Posted: ",
+    "app-post-invalid": "Please enter a message."
 }
