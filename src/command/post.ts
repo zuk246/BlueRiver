@@ -1,13 +1,14 @@
 import * as vscode from 'vscode';
-import { Lang, langs } from '../data/lang';
+import { langs } from '../data/lang';
 import Bluesky from '../bluesky';
+import { locale } from '../locale';
 
 export default async function postCommand() {
     const text = await vscode.window.showInputBox({
-        placeHolder: `What's up?`,
+        placeHolder: locale('app-post-message'),
         validateInput: (value) => {
             if (!value) {
-                return 'Please enter some text';
+                return locale('app-post-invalid');
             }
         },
     });
@@ -16,14 +17,38 @@ export default async function postCommand() {
         return;
     }
 
-    const langPickItems: vscode.QuickPickItem[] = Object.keys(langs).map(
-        (lang) => ({
-            label: lang,
-            description: langs[lang as Lang],
-        })
-    );
+    const defaultLang = vscode.workspace
+        .getConfiguration('blueriver')
+        .get('lang');
 
-    const lang = await vscode.window.showQuickPick(langPickItems);
+    const langPickItems: vscode.QuickPickItem[] = [];
+
+    // defaultLang が一番上に来るようにする
+    if (defaultLang) {
+        const defaultLangData = langs.find((lang) => lang.id === defaultLang);
+
+        if (defaultLangData) {
+            langPickItems.push({
+                label: defaultLangData.id,
+                description: defaultLangData.name,
+            });
+        }
+    }
+
+    for (const lang of langs.sort((a, b) => b.population - a.population)) {
+        if (lang.id === defaultLang) {
+            continue;
+        }
+
+        langPickItems.push({
+            label: lang.id,
+            description: lang.name,
+        });
+    }
+
+    const lang = await vscode.window.showQuickPick(langPickItems, {
+        placeHolder: locale('app-post-select-lang'),
+    });
 
     if (!lang || Object.keys(langs).indexOf(lang.label) === -1) {
         return;
@@ -31,9 +56,9 @@ export default async function postCommand() {
 
     const bluesky = new Bluesky();
     await bluesky.login();
-    await bluesky.post(text, lang.label as Lang).then(() => {
+    await bluesky.post(text, lang.label).then(() => {
         vscode.window.showInformationMessage(
-            `Posted: ${text} in ${lang.description}`
+            `${locale('app-post-done')}${text}`
         );
     });
 }
