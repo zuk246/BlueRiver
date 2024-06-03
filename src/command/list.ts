@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { locale } from '../locale';
 
 interface CommandItem extends vscode.QuickPickItem {
     command: string;
@@ -7,26 +8,26 @@ interface CommandItem extends vscode.QuickPickItem {
 
 const items: CommandItem[] = [
     {
-        label: 'Timeline',
-        description: 'Show the timeline',
+        label: locale('command-name-timeline'),
+        description: locale('command-desc-timeline'),
         command: 'blueriver.timeline',
         iconPath: new vscode.ThemeIcon('comment-discussion'),
     },
     {
-        label: 'Post',
-        description: 'Create a new post',
+        label: locale('command-name-post'),
+        description: locale('command-desc-post'),
         command: 'blueriver.post',
         iconPath: new vscode.ThemeIcon('edit'),
     },
     {
-        label: 'Like',
-        description: 'Like the post',
+        label: locale('command-name-like'),
+        description: locale('command-desc-like'),
         command: 'blueriver.like',
         iconPath: new vscode.ThemeIcon('heart'),
     },
     {
-        label: 'Notifications',
-        description: 'Show the notifications',
+        label: locale('command-name-notifications'),
+        description: locale('command-desc-notifications'),
         command: 'blueriver.notifications',
         iconPath: new vscode.ThemeIcon('bell'),
     },
@@ -36,8 +37,8 @@ const items: CommandItem[] = [
         label: '',
     },
     {
-        label: 'Settings',
-        description: 'Show the settings',
+        label: locale('command-name-settings'),
+        description: locale('command-desc-settings'),
         command: 'workbench.action.openSettings',
         secondaryCommand: 'blueriver',
         iconPath: new vscode.ThemeIcon('gear'),
