@@ -1,59 +1,41 @@
 import * as vscode from 'vscode';
-import Bluesky from '../bluesky';
+import Bluesky from '../../bluesky';
 import { Notification } from '@atproto/api/dist/client/types/app/bsky/notification/listNotifications';
-import icons, { IconType } from '../components/icons';
-import getRelativeTime from '../features/getRelativeTime';
-import { notifications_text } from '../data/notifications';
+import icons, { IconType } from '../../components/icons';
+import getRelativeTime from '../../features/getRelativeTime';
+import { notifications_text } from '../../data/notifications';
+import webviewLayout from '../layout';
 
 export class NotificationsView {
-    constructor(private extensionUri: vscode.Uri) {}
+    constructor(private extensionUri: vscode.Uri, private bluesky: Bluesky) {}
 
     public async resolveWebviewView(webviewView: vscode.WebviewPanel) {
-        webviewView.webview.options = {};
-
-        const styleUri = webviewView.webview.asWebviewUri(
-            vscode.Uri.joinPath(this.extensionUri, 'media', 'style.css')
-        );
-
-        const bluesky = new Bluesky();
-        await bluesky.login();
-
-        const notification = await bluesky.notification();
+        const notification = await this.bluesky.notification();
 
         if (!notification || !notification.success) {
             return;
         }
 
-        const a = notification.data.notifications;
-
         const cards = notification.data.notifications
             .map((item) => this.notificationCard(item))
             .join(' ');
 
-        const unread = notification.data.notifications.filter(
-            (item) => !item.isRead
-        ).length;
+        const content = `
+            <ul class="notifications-list">
+                ${cards}
+            </ul>`;
 
-        webviewView.webview.html = `
-        <!DOCTYPE html>
-        <html lang="ja">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Bluesky Notifications</title>
-                <link rel="stylesheet" href="${styleUri}">
-            </head>
-            <body>
-                <div class="head">
-                    <h1 class="title">Notification</h1>
-                    <p class="subtitle">You have ${unread} notifications.</p>
-                </div>
-                <ul class="notifications-list">
-                    ${cards}
-                </ul>
-            </body> 
-        </html>
-        `;
+        webviewLayout(
+            {
+                webviewView,
+                extensionUri: this.extensionUri,
+            },
+            content,
+            {
+                title: 'Bluesky Notifications',
+                scripts: ['src', 'webview', 'notifications', 'script.js'],
+            }
+        );
     }
 
     private notificationCard(notification: Notification) {
