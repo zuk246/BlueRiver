@@ -61,7 +61,7 @@ export default class Bluesky {
     public async notification() {
         try {
             const notification = await this.agent.listNotifications();
-            this.agent.updateSeenNotifications();
+            await this.agent.updateSeenNotifications();
             return notification;
         } catch (_) {
             vscode.window.showErrorMessage('Failed to get notification');
