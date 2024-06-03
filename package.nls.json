@@ -4,13 +4,29 @@
     "command-notifications": "Bluesky: Notifications",
     "command-like": "Bluesky: Like",
 
+    "command-name-list": "List Commands",
+    "command-name-timeline": "Timeline",
+    "command-name-post": "Post",
+    "command-name-notifications": "Notifications",
+    "command-name-like": "Like",
+    "command-name-settings": "Settings",
+
+    "command-desc-list": "Show the command list",
+    "command-desc-timeline": "Show the timeline",
+    "command-desc-post": "Create a new post",
+    "command-desc-notifications": "Show the notifications",
+    "command-desc-like": "Like the post",
+    "command-desc-settings": "Show the settings",
+
     "setting-service": "Service URL",
     "setting-user": "Username or email address",
     "setting-password": "App password. The app password set in the official app is recommended.",
     "setting-lang": "Default Language. Must be specified as 639-1. (e.g. en, ja)",
 
+    "message-report-bug": "Report a bug",
+
     "app-post-message": "What`s up?",
     "app-post-select-lang": "Select a language",
-    "app-post-done": "Posted: ",
+    "app-post-done": "Posted",
     "app-post-invalid": "Please enter a message."
 }
