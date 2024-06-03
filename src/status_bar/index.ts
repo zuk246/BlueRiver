@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import Bluesky from '../bluesky';
 
-export default function showStatusBar() {
+export default function showStatusBar(bluesky: Bluesky) {
     const status_bar = vscode.window.createStatusBarItem(
         vscode.StatusBarAlignment.Right,
         2
@@ -15,9 +15,6 @@ export default function showStatusBar() {
     status_bar.show();
 
     setInterval(async () => {
-        const bluesky = new Bluesky();
-        await bluesky.login();
-
         const unreadNotifications = await bluesky.notificationCount();
 
         status_bar.text =

@@ -3,7 +3,7 @@ import { langs } from '../data/lang';
 import Bluesky from '../bluesky';
 import { locale } from '../locale';
 
-export default async function postCommand() {
+export default async function postCommand(bluesky: Bluesky) {
     const text = await vscode.window.showInputBox({
         placeHolder: locale('app-post-message'),
         validateInput: (value) => {
@@ -50,15 +50,11 @@ export default async function postCommand() {
         placeHolder: locale('app-post-select-lang'),
     });
 
-    if (!lang || Object.keys(langs).indexOf(lang.label) === -1) {
+    if (!lang || !langs.find((l) => l.id === lang.label)) {
         return;
     }
 
-    const bluesky = new Bluesky();
-    await bluesky.login();
     await bluesky.post(text, lang.label).then(() => {
-        vscode.window.showInformationMessage(
-            `${locale('app-post-done')}${text}`
-        );
+        vscode.window.showInformationMessage(`${locale('app-post-done')}`);
     });
 }
