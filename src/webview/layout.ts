@@ -31,7 +31,7 @@ export default function webviewLayout(
         : undefined;
 
     const layoutScriptPath = webviewView.webview.asWebviewUri(
-        vscode.Uri.joinPath(extensionUri, 'src', 'webview', 'layout-script.js')
+        vscode.Uri.joinPath(extensionUri, 'media', 'layout-script.js')
     );
 
     const sidebarContent: {
