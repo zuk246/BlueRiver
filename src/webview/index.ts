@@ -1,2 +1,2 @@
-export { TimelineView } from './timeline';
-export { NotificationsView } from './notifications';
+export { TimelineView } from './timeline/view';
+export { NotificationsView } from './notifications/view';

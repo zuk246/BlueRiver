@@ -3,7 +3,30 @@
     "command-timeline": "Bluesky: タイムライン",
     "command-notifications": "Bluesky: 通知",
     "command-like": "Bluesky: いいねをする",
+
+    "command-name-list": "コマンドリスト",
+    "command-name-timeline": "タイムライン",
+    "command-name-post": "投稿",
+    "command-name-notifications": "通知",
+    "command-name-like": "いいね",
+    "command-name-settings": "設定",
+
+    "command-desc-list": "コマンドリストを表示",
+    "command-desc-timeline": "タイムラインを表示",
+    "command-desc-post": "新しい投稿を作成",
+    "command-desc-notifications": "通知を表示",
+    "command-desc-like": "投稿にいいねする",
+    "command-desc-settings": "設定を表示",
+
     "setting-service": "ログインするサーバー",
     "setting-user": "ユーザー名又はメールアドレス",
-    "setting-password": "アプリパスワード。アプリパスワードは公式アプリで設定したものを推奨します。"
+    "setting-password": "アプリパスワード。アプリパスワードは公式アプリで設定したものを推奨します。",
+    "setting-lang": "デフォルトの言語。639-1で指定する必要があります。(ja, en, ...)",
+
+    "message-report-bug": "バグを報告",
+
+    "app-post-message": "最近どう？",
+    "app-post-select-lang": "投稿言語を選択",
+    "app-post-done": "ポストに成功",
+    "app-post-invalid": "ポストするテキストを入力してください。"
 }

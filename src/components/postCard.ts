@@ -24,8 +24,10 @@ export default function getPostCardWebView(item: FeedViewPost) {
             <div class="link-card">
                 <a href="${external.uri}" class="link-card-a">
                     <img src="${external.thumb}" alt="external" width="full" class="link-card-img" />
-                    <p class="link-card-url">${url}</p>
-                    <p class="link-card-title">${external.title}</p>
+                    <div class="link-card-text">
+                        <p class="link-card-url">${url}</p>
+                        <p class="link-card-title">${external.title}</p>
+                    </div>
                 </a>
             </div>
         `;

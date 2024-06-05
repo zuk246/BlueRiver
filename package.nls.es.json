@@ -1,9 +1,32 @@
 {
-    "command-list": "Bluesky: Lista de comandos",
-    "command-timeline": "Bluesky: Línea de tiempo",
+    "command-list": "Bluesky: Lista de Comandos",
+    "command-timeline": "Bluesky: Cronología",
     "command-notifications": "Bluesky: Notificaciones",
-    "command-like": "Bluesky: Como",
+    "command-like": "Bluesky: Me gusta",
+
+    "command-name-list": "Comandos de Lista",
+    "command-name-timeline": "Cronología",
+    "command-name-post": "Publicar",
+    "command-name-notifications": "Notificaciones",
+    "command-name-like": "Me gusta",
+    "command-name-settings": "Configuraciones",
+
+    "command-desc-list": "Mostrar la lista de comandos",
+    "command-desc-timeline": "Mostrar la cronología",
+    "command-desc-post": "Crear una nueva publicación",
+    "command-desc-notifications": "Mostrar las notificaciones",
+    "command-desc-like": "Dar me gusta a la publicación",
+    "command-desc-settings": "Mostrar las configuraciones",
+
     "setting-service": "URL del servicio",
     "setting-user": "Nombre de usuario o dirección de correo electrónico",
-    "setting-password": "Contraseña de la aplicación. Se recomienda la contraseña de la aplicación establecida en la aplicación oficial."
+    "setting-password": "Contraseña de la aplicación. Se recomienda configurar la contraseña en la aplicación oficial.",
+    "setting-lang": "Idioma predeterminado. Debe especificarse como 639-1. (por ejemplo, en, ja)",
+
+    "message-report-bug": "Informar de un error",
+
+    "app-post-message": "¿Qué pasa?",
+    "app-post-select-lang": "Seleccionar un idioma",
+    "app-post-done": "Publicado",
+    "app-post-invalid": "Por favor, ingrese un mensaje."
 }

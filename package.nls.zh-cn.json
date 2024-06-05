@@ -1,9 +1,32 @@
 {
-    "command-list": "Bluesky: 命令列表",
-    "command-timeline": "Bluesky: 时间线",
-    "command-notifications": "Bluesky: 通知",
-    "command-like": "Bluesky: 点赞",
-    "setting-service": "服务网址",
-    "setting-user": "用户名或邮箱",
-    "setting-password": "应用密码，建议使用官方应用中设置的应用密码。"
+    "command-list": "Bluesky：命令列表",
+    "command-timeline": "Bluesky：时间线",
+    "command-notifications": "Bluesky：通知",
+    "command-like": "Bluesky：点赞",
+
+    "command-name-list": "列表命令",
+    "command-name-timeline": "时间线",
+    "command-name-post": "发布",
+    "command-name-notifications": "通知",
+    "command-name-like": "点赞",
+    "command-name-settings": "设置",
+
+    "command-desc-list": "显示命令列表",
+    "command-desc-timeline": "显示时间线",
+    "command-desc-post": "创建新帖子",
+    "command-desc-notifications": "显示通知",
+    "command-desc-like": "点赞帖子",
+    "command-desc-settings": "显示设置",
+
+    "setting-service": "服务 URL",
+    "setting-user": "用户名或电子邮件地址",
+    "setting-password": "应用密码。建议在官方应用中设置应用密码。",
+    "setting-lang": "默认语言。必须指定为639-1代码。（例如：en, ja）",
+
+    "message-report-bug": "报告错误",
+
+    "app-post-message": "最近怎么样？",
+    "app-post-select-lang": "选择一种语言",
+    "app-post-done": "已发布",
+    "app-post-invalid": "请输入信息。"
 }

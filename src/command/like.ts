@@ -6,10 +6,7 @@ interface PostItem extends vscode.QuickPickItem {
     cid: string;
 }
 
-export default async function likeCommand() {
-    const bluesky = new Bluesky();
-    await bluesky.login();
-
+export default async function likeCommand(bluesky: Bluesky) {
     const timeline = await bluesky.timeline();
 
     if (!timeline) {
