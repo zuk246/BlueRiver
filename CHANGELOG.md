@@ -18,3 +18,7 @@
 -   Support for more localizations
 -   Improved webview experience
 -   Fixed login failures
+
+## v1.3.0
+
+-   Added account page
