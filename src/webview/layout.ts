@@ -11,7 +11,7 @@ export default function webviewLayout(
     content: string,
     settings: {
         title: string;
-        scripts: string[];
+        scripts?: string[];
     }
 ) {
     const { webviewView, extensionUri } = config;

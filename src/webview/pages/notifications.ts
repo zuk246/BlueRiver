@@ -33,7 +33,6 @@ export class NotificationsView {
             content,
             {
                 title: 'Bluesky Notifications',
-                scripts: ['src', 'webview', 'notifications', 'script.js'],
             }
         );
     }
