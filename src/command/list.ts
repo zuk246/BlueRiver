@@ -32,6 +32,12 @@ const items: CommandItem[] = [
         iconPath: new vscode.ThemeIcon('bell'),
     },
     {
+        label: locale('command-name-account'),
+        description: locale('command-desc-account'),
+        command: 'blueriver.account',
+        iconPath: new vscode.ThemeIcon('account'),
+    },
+    {
         kind: vscode.QuickPickItemKind.Separator,
         command: '',
         label: '',

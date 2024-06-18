@@ -3,12 +3,14 @@
     "command-timeline": "Bluesky: タイムライン",
     "command-notifications": "Bluesky: 通知",
     "command-like": "Bluesky: いいねをする",
+    "command-account": "Bluesky: アカウント",
 
     "command-name-list": "コマンドリスト",
     "command-name-timeline": "タイムライン",
     "command-name-post": "投稿",
     "command-name-notifications": "通知",
     "command-name-like": "いいね",
+    "command-name-account": "アカウント",
     "command-name-settings": "設定",
 
     "command-desc-list": "コマンドリストを表示",
@@ -16,6 +18,7 @@
     "command-desc-post": "新しい投稿を作成",
     "command-desc-notifications": "通知を表示",
     "command-desc-like": "投稿にいいねする",
+    "command-desc-account": "アカウント情報を表示",
     "command-desc-settings": "設定を表示",
 
     "setting-service": "ログインするサーバー",
@@ -29,6 +32,10 @@
     "app-post-select-lang": "投稿言語を選択",
     "app-post-done": "ポストに成功",
     "app-post-invalid": "ポストするテキストを入力してください。",
+
+    "app-profile-following": "フォロー中",
+    "app-profile-followers": "フォロワー",
+    "app-profile-posts": "投稿",
 
     "status-bar-unread": "未読"
 }

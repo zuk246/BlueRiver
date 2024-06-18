@@ -57,7 +57,11 @@ export default function webviewLayout(
         },
         // { name: 'Feed', icon: 'newspaper' },
         // { name: 'List', icon: 'list' },
-        // { name: 'Account', icon: 'person' },
+        {
+            name: locale('command-name-account'),
+            icon: 'person',
+            command: 'blueriver.account',
+        },
         {
             name: locale('command-name-settings'),
             icon: 'settings',

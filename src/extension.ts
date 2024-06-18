@@ -1,9 +1,24 @@
 import * as vscode from 'vscode';
-import { NotificationsView, TimelineView } from './webview';
+import { AccountView, NotificationsView, TimelineView } from './webview';
 import showStatusBar from './status_bar';
 import { listCommand, postCommand, likeCommand } from './command';
 import Bluesky from './bluesky';
 import { locale } from './locale';
+
+function iconPath(context: vscode.ExtensionContext) {
+    return {
+        light: vscode.Uri.joinPath(
+            context.extensionUri,
+            'assets',
+            'bluesky.svg'
+        ),
+        dark: vscode.Uri.joinPath(
+            context.extensionUri,
+            'assets',
+            'bluesky.svg'
+        ),
+    };
+}
 
 export async function activate(context: vscode.ExtensionContext) {
     const bluesky = new Bluesky();
@@ -25,18 +40,7 @@ export async function activate(context: vscode.ExtensionContext) {
             title,
             vscode.ViewColumn.One
         );
-        panel.iconPath = {
-            light: vscode.Uri.joinPath(
-                context.extensionUri,
-                'assets',
-                'bluesky.svg'
-            ),
-            dark: vscode.Uri.joinPath(
-                context.extensionUri,
-                'assets',
-                'bluesky.svg'
-            ),
-        };
+        panel.iconPath = iconPath(context);
         const view = new TimelineView(context.extensionUri, bluesky);
         view.resolveWebviewView(panel);
     });
@@ -54,18 +58,7 @@ export async function activate(context: vscode.ExtensionContext) {
             title,
             vscode.ViewColumn.One
         );
-        panel.iconPath = {
-            light: vscode.Uri.joinPath(
-                context.extensionUri,
-                'assets',
-                'bluesky.svg'
-            ),
-            dark: vscode.Uri.joinPath(
-                context.extensionUri,
-                'assets',
-                'bluesky.svg'
-            ),
-        };
+        panel.iconPath = iconPath(context);
         const view = new NotificationsView(context.extensionUri, bluesky);
         view.resolveWebviewView(panel);
     });
@@ -73,6 +66,19 @@ export async function activate(context: vscode.ExtensionContext) {
     // like
     vscode.commands.registerCommand('blueriver.like', async () => {
         await likeCommand(bluesky);
+    });
+
+    // account
+    vscode.commands.registerCommand('blueriver.account', async () => {
+        const title = locale('command-name-account');
+        const panel = vscode.window.createWebviewPanel(
+            'account',
+            title,
+            vscode.ViewColumn.One
+        );
+        panel.iconPath = iconPath(context);
+        const view = new AccountView(context.extensionUri, bluesky);
+        view.resolveWebviewView(panel);
     });
 }
 

@@ -272,3 +272,47 @@
     font-size: 15px;
     font-weight: 700;
 }
+
+/* aacount */
+.account-banner {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.account-icon {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 2px solid var(--vscode-disabledForeground);
+    transform: translate(20px, -50%);
+}
+
+.account-info {
+    padding: 0 1.5rem;
+    margin: -45px 0 2rem 0;
+}
+
+.account-info-name {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.account-info-handle {
+    opacity: 0.8;
+}
+
+.account-info-bio {
+    margin: 1rem 0 0 0;
+}
+
+.account-info-bio-line {
+    word-break: break-word;
+}
+
+.account-info-status {
+    margin: 1rem 0 0 0;
+    display: flex;
+    gap: 0.75rem;
+}
