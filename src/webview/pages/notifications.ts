@@ -1,10 +1,10 @@
 import * as vscode from 'vscode';
 import Bluesky from '../../bluesky';
 import { Notification } from '@atproto/api/dist/client/types/app/bsky/notification/listNotifications';
-import icons, { IconType } from '../../components/icons';
-import getRelativeTime from '../../features/getRelativeTime';
 import { notifications_text } from '../../data/notifications';
 import webviewLayout from '../layout';
+import icons, { IconType } from '../components/icons';
+import getRelativeTime from '../../utils/getRelativeTime';
 
 export class NotificationsView {
     constructor(private extensionUri: vscode.Uri, private bluesky: Bluesky) {}

@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
-import icons, { IconType } from '../components/icons';
 import { locale } from '../locale';
 import { getNonce } from '../utils/nonce';
+import icons, { IconType } from './components/icons';
 
 export default function webviewLayout(
     config: {
