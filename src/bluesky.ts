@@ -118,4 +118,25 @@ export default class Bluesky {
             vscode.window.showErrorMessage('Failed to like');
         }
     }
+
+    public async accountInfo() {
+        if (!this.loginStatus) {
+            await this.login();
+        }
+
+        try {
+            const accountInfo = await this.agent.getProfile({
+                actor: this.agent.session.did,
+            });
+            const postData = await this.agent.getAuthorFeed({
+                actor: this.agent.session.did,
+            });
+            return {
+                info: accountInfo.data,
+                posts: postData.data.feed,
+            };
+        } catch (_) {
+            vscode.window.showErrorMessage('Failed to get account info');
+        }
+    }
 }

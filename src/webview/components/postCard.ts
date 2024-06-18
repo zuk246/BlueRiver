@@ -1,8 +1,8 @@
 import { FeedViewPost } from '@atproto/api/dist/client/types/app/bsky/feed/defs';
-import getRelativeTime from '../features/getRelativeTime';
 import { ViewExternal } from '@atproto/api/dist/client/types/app/bsky/embed/external';
 import { ViewImage } from '@atproto/api/dist/client/types/app/bsky/embed/images';
 import icons from './icons';
+import getRelativeTime from '../../utils/getRelativeTime';
 
 export default function getPostCardWebView(item: FeedViewPost) {
     const relativeTime = getRelativeTime(item.post.indexedAt);

@@ -28,5 +28,7 @@
     "app-post-message": "Quoi de neuf?",
     "app-post-select-lang": "Sélectionner une langue",
     "app-post-done": "Publié",
-    "app-post-invalid": "Veuillez entrer un message."
+    "app-post-invalid": "Veuillez entrer un message.",
+
+    "status-bar-unread": "Non lu"
 }

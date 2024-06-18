@@ -28,5 +28,7 @@
     "app-post-message": "最近怎么样？",
     "app-post-select-lang": "选择一种语言",
     "app-post-done": "已发布",
-    "app-post-invalid": "请输入信息。"
+    "app-post-invalid": "请输入信息。",
+
+    "status-bar-unread": "未读"
 }

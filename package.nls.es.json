@@ -28,5 +28,7 @@
     "app-post-message": "¿Qué pasa?",
     "app-post-select-lang": "Seleccionar un idioma",
     "app-post-done": "Publicado",
-    "app-post-invalid": "Por favor, ingrese un mensaje."
+    "app-post-invalid": "Por favor, ingrese un mensaje.",
+
+    "status-bar-unread": "sin leer"
 }

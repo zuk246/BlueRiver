@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import Bluesky from '../../bluesky';
-import getPostCardWebView from '../../components/postCard';
 import webviewLayout from '../layout';
+import getPostCardWebView from '../components/postCard';
 
 export class TimelineView {
     constructor(private extensionUri: vscode.Uri, private bluesky: Bluesky) {}

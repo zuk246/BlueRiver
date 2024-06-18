@@ -3,12 +3,14 @@
     "command-timeline": "Bluesky: Timeline",
     "command-notifications": "Bluesky: Notifications",
     "command-like": "Bluesky: Like",
+    "command-account": "Bluesky: Account",
 
     "command-name-list": "List Commands",
     "command-name-timeline": "Timeline",
     "command-name-post": "Post",
     "command-name-notifications": "Notifications",
     "command-name-like": "Like",
+    "command-name-account": "Account",
     "command-name-settings": "Settings",
 
     "command-desc-list": "Show the command list",
@@ -16,6 +18,7 @@
     "command-desc-post": "Create a new post",
     "command-desc-notifications": "Show the notifications",
     "command-desc-like": "Like the post",
+    "command-desc-account": "Show the account information",
     "command-desc-settings": "Show the settings",
 
     "setting-service": "Service URL",
@@ -28,5 +31,11 @@
     "app-post-message": "What`s up?",
     "app-post-select-lang": "Select a language",
     "app-post-done": "Posted",
-    "app-post-invalid": "Please enter a message."
+    "app-post-invalid": "Please enter a message.",
+
+    "app-profile-following": "Following",
+    "app-profile-followers": "Followers",
+    "app-profile-posts": "Posts",
+
+    "status-bar-unread": "Unread"
 }

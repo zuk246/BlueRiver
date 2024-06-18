@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
-import icons, { IconType } from '../components/icons';
 import { locale } from '../locale';
 import { getNonce } from '../utils/nonce';
+import icons, { IconType } from './components/icons';
 
 export default function webviewLayout(
     config: {
@@ -11,7 +11,7 @@ export default function webviewLayout(
     content: string,
     settings: {
         title: string;
-        scripts: string[];
+        scripts?: string[];
     }
 ) {
     const { webviewView, extensionUri } = config;
@@ -57,7 +57,11 @@ export default function webviewLayout(
         },
         // { name: 'Feed', icon: 'newspaper' },
         // { name: 'List', icon: 'list' },
-        // { name: 'Account', icon: 'person' },
+        {
+            name: locale('command-name-account'),
+            icon: 'person',
+            command: 'blueriver.account',
+        },
         {
             name: locale('command-name-settings'),
             icon: 'settings',

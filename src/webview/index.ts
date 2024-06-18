@@ -1,2 +1,3 @@
-export { TimelineView } from './timeline/view';
-export { NotificationsView } from './notifications/view';
+export { TimelineView } from './pages/timeline';
+export { NotificationsView } from './pages/notifications';
+export { AccountView } from './pages/account';
