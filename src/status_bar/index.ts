@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import Bluesky from '../bluesky';
+import { locale } from '../locale';
 
 export default function showStatusBar(bluesky: Bluesky) {
     const status_bar = vscode.window.createStatusBarItem(
@@ -19,9 +20,11 @@ export default function showStatusBar(bluesky: Bluesky) {
 
         status_bar.text =
             unreadNotifications > 0
-                ? `$(bluesky-logo) ${unreadNotifications} unread`
+                ? `$(bluesky-logo) ${unreadNotifications} ${locale(
+                      'status-bar-unread'
+                  )}`
                 : '$(bluesky-logo)';
 
         status_bar.show();
-    }, 30000);
+    }, 20000);
 }

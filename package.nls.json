@@ -28,5 +28,7 @@
     "app-post-message": "What`s up?",
     "app-post-select-lang": "Select a language",
     "app-post-done": "Posted",
-    "app-post-invalid": "Please enter a message."
+    "app-post-invalid": "Please enter a message.",
+
+    "status-bar-unread": "Unread"
 }

@@ -28,5 +28,7 @@
     "app-post-message": "最近どう？",
     "app-post-select-lang": "投稿言語を選択",
     "app-post-done": "ポストに成功",
-    "app-post-invalid": "ポストするテキストを入力してください。"
+    "app-post-invalid": "ポストするテキストを入力してください。",
+
+    "status-bar-unread": "未読"
 }
