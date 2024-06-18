@@ -34,7 +34,7 @@
             {
                 "command": "blueriver.list",
                 "title": "%command-list%",
-                "shortTitle": "commands"
+                "shortTitle": "Commands"
             },
             {
                 "command": "blueriver.timeline",
@@ -50,6 +50,11 @@
                 "command": "blueriver.like",
                 "title": "%command-like%",
                 "shortTitle": "Like"
+            },
+            {
+                "command": "blueriver.account",
+                "title": "%command-account%",
+                "shortTitle": "Account"
             }
         ],
         "configuration": {
@@ -100,7 +105,7 @@
         "typescript": "^5.4.5"
     },
     "dependencies": {
-        "@atproto/api": "^0.12.8",
+        "@atproto/api": "^0.12.19",
         "dayjs": "^1.11.11"
     }
 }
