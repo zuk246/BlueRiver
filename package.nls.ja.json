@@ -22,6 +22,15 @@
     "command-desc-account": "アカウント情報を表示",
     "command-desc-settings": "設定を表示",
 
+    "error-failed-login": "ログインに失敗しました。設定が正しいか確認してください。",
+    "error-failed-timeline": "タイムラインの取得に失敗",
+    "error-failed-notification": "通知の取得に失敗",
+    "error-failed-post": "ポストに失敗",
+    "error-failed-like": "いいねに失敗",
+    "error-failed-account": "アカウント情報の取得に失敗",
+
+    "success-login": "ログインに成功",
+
     "setting-service": "ログインするサーバー",
     "setting-user": "ユーザー名又はメールアドレス",
     "setting-password": "アプリパスワード。アプリパスワードは公式アプリで設定したものを推奨します。",

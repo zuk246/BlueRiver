@@ -22,6 +22,15 @@
     "command-desc-account": "Mostrar la información de la cuenta",
     "command-desc-settings": "Mostrar la configuración",
 
+    "error-failed-login": "Error al iniciar sesión. Por favor, verifique su configuración.",
+    "error-failed-timeline": "Error al obtener la línea de tiempo",
+    "error-failed-notification": "Error al obtener la notificación",
+    "error-failed-post": "Error al crear una nueva publicación",
+    "error-failed-like": "Error al dar me gusta a la publicación",
+    "error-failed-account": "Error al obtener la información de la cuenta",
+
+    "success-login": "Inicio de sesión exitoso",
+
     "setting-service": "URL del servicio",
     "setting-user": "Nombre de usuario o dirección de correo electrónico",
     "setting-password": "Contraseña de la aplicación. Se recomienda la contraseña establecida en la aplicación oficial.",

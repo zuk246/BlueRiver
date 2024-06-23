@@ -22,6 +22,15 @@
     "command-desc-account": "显示账户信息",
     "command-desc-settings": "显示设置",
 
+    "error-failed-login": "登录失败。请检查您的配置。",
+    "error-failed-timeline": "获取时间线失败",
+    "error-failed-notification": "获取通知失败",
+    "error-failed-post": "创建新帖子失败",
+    "error-failed-like": "点赞帖子失败",
+    "error-failed-account": "获取账户信息失败",
+
+    "success-login": "登录成功",
+
     "setting-service": "服务 URL",
     "setting-user": "用户名或电子邮件地址",
     "setting-password": "应用密码。建议使用在官方应用中设置的应用密码。",

@@ -1,34 +1,29 @@
-<br />
-<div align="center">
-  <a href="https://github.com/zuk246/BlueRiver">
-    <img src="./assets/blueriver-256.png" alt="Logo" width="90" height="90">
-  </a>
-  <h3 align="center">BlueRiver</h3>
-  <p align="center">
-    VSCode client for Bluesky
-    <br />
-    <a href="https://marketplace.visualstudio.com/items?itemName=zuk246.blueriver"><strong>View VSCode Marketplace >></strong></a>
-    <br />
-    <br />
-  </p>
-</div>
-
-## About
-
-![](./art/screenshot-1.png)
+# BlueRiver - VSCode client for Bluesky
 
 This is a VSCode extension for the client of Bluesky. It has features such as posts, timeline, notifications, and liking. It also has multi-column view and notification status bar. We plan to add more features in the future.
 
+Click [here](https://marketplace.visualstudio.com/items?itemName=zuk246.blueriver) to install.
+
+![](./art/screenshot-1.png)
+
+Once installed, you can use the following features:
+
+-   Timeline view (with link cards)
+-   Notifications
+-   Like other people's posts
+-   Status bar
+-   Create new posts
+-   Check your account information
+
 ## Installation
 
-1. Install this extension.
-2. Set your username and app password to settings.
+1. Install the extension from here.
 
-    We recommend using the app password obtained from the official Bluesky app, which you can get [here](https://bsky.app/settings/app-passwords).
+2. Click "Open Settings" when you receive a notification.
 
-    `"blueriver.user": "xxx.xxx"`
+3. Set the server, username, and password.
 
-    `"blueriver.password": "xxx-xxx-xxx"`
+    (Don't worry, these will be saved as secret variables. Also, no unauthorized posting will be made.)
 
 ## Usage
 
@@ -61,13 +56,21 @@ And it can display a list of commands.
 
     This is a list of notifications for the logged-in user.
 
--   command list
+-   Command list
 
     `blueriver.list`
 
     This is a list of commands for this extension.
 
+-   Settings
+
+    `blueriver.settings`
+
+    You can set the server, username and password.
+
 ## Start developing
+
+This is for developers.
 
 ### Built With
 
@@ -96,17 +99,6 @@ npm install
 When you didn't have vscode, please install vscode from [here](https://code.visualstudio.com/download).
 
 press `F5` or run the command Debug: Start Debugging from the Command Palette (`⇧⌘P`). This will compile and run the extension in a new Extension Development Host window.
-
-### Settings
-
-1. Install this extension.
-2. Set your username and app password to settings.
-
-    We recommend using the app password obtained from the official Bluesky app, which you can get [here](https://bsky.app/settings/app-passwords).
-
-    `"blueriver.user": "xxx.xxx"`
-
-    `"blueriver.password": "xxx-xxx-xxx"`
 
 ## License
 
