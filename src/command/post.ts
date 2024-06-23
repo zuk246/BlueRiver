@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { langs } from '../data/lang';
 import Bluesky from '../bluesky';
-import { locale } from '../locale';
+import { LocaleKey, locale } from '../locale';
 
 export default async function postCommand(bluesky: Bluesky) {
     const text = await vscode.window.showInputBox({
@@ -17,10 +17,7 @@ export default async function postCommand(bluesky: Bluesky) {
         return;
     }
 
-    const defaultLang = vscode.workspace
-        .getConfiguration('blueriver')
-        .get('lang');
-
+    const defaultLang = LocaleKey;
     const langPickItems: vscode.QuickPickItem[] = [];
 
     // defaultLang が一番上に来るようにする
@@ -30,7 +27,7 @@ export default async function postCommand(bluesky: Bluesky) {
         if (defaultLangData) {
             langPickItems.push({
                 label: defaultLangData.id,
-                description: defaultLangData.name,
+                description: `${defaultLangData.name} - default`,
             });
         }
     }
