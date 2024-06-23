@@ -1,7 +1,12 @@
 import * as vscode from 'vscode';
 import { AccountView, NotificationsView, TimelineView } from './webview';
 import showStatusBar from './status_bar';
-import { listCommand, postCommand, likeCommand } from './command';
+import {
+    listCommand,
+    postCommand,
+    likeCommand,
+    setCredentials,
+} from './command';
 import Bluesky from './bluesky';
 import { locale } from './locale';
 
@@ -21,11 +26,16 @@ function iconPath(context: vscode.ExtensionContext) {
 }
 
 export async function activate(context: vscode.ExtensionContext) {
-    const bluesky = new Bluesky();
-    await bluesky.login();
+    const bluesky = new Bluesky(context);
+    await bluesky.login(context);
 
     // status bar
     showStatusBar(bluesky);
+
+    // settings
+    vscode.commands.registerCommand('blueriver.settings', async () => {
+        await setCredentials(bluesky, context);
+    });
 
     // list
     vscode.commands.registerCommand('blueriver.list', async () => {
