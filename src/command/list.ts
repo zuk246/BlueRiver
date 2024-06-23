@@ -3,7 +3,6 @@ import { locale } from '../locale';
 
 interface CommandItem extends vscode.QuickPickItem {
     command: string;
-    secondaryCommand?: string;
 }
 
 const items: CommandItem[] = [
@@ -45,8 +44,7 @@ const items: CommandItem[] = [
     {
         label: locale('command-name-settings'),
         description: locale('command-desc-settings'),
-        command: 'workbench.action.openSettings',
-        secondaryCommand: 'blueriver',
+        command: 'blueriver.setCredentials',
         iconPath: new vscode.ThemeIcon('gear'),
     },
 ];
@@ -58,5 +56,5 @@ export default async function listCommand() {
         return;
     }
 
-    vscode.commands.executeCommand(command.command, command.secondaryCommand);
+    vscode.commands.executeCommand(command.command);
 }
