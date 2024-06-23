@@ -22,3 +22,7 @@
 ## v1.3.0
 
 -   Added account page
+
+## v.1.4.0
+
+-   Added secure password storage
