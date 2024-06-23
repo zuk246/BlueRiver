@@ -36,6 +36,13 @@
 
     "app-timeline-repost": "reposted",
 
+    "app-notification-reply": "replied to your post",
+    "app-notification-repost": "reposted your post",
+    "app-notification-like": "liked your post",
+    "app-notification-follow": "followed you",
+    "app-notification-mention": "mentioned you",
+    "app-notification-quote": "quoted your post",
+
     "app-profile-following": "Following",
     "app-profile-followers": "Followers",
     "app-profile-posts": "Posts",
