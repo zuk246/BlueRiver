@@ -22,6 +22,15 @@
     "command-desc-account": "Afficher les informations du compte",
     "command-desc-settings": "Afficher les paramètres",
 
+    "error-failed-login": "Échec de la connexion. Veuillez vérifier votre configuration.",
+    "error-failed-timeline": "Échec de la récupération de la chronologie",
+    "error-failed-notification": "Échec de la récupération de la notification",
+    "error-failed-post": "Échec de la création du nouveau post",
+    "error-failed-like": "Échec de l'ajout de j'aime au post",
+    "error-failed-account": "Échec de la récupération des informations du compte",
+
+    "success-login": "Connexion réussie",
+
     "setting-service": "URL du service",
     "setting-user": "Nom d'utilisateur ou adresse e-mail",
     "setting-password": "Mot de passe de l'application. Le mot de passe de l'application défini dans l'application officielle est recommandé.",

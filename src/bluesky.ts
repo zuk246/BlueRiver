@@ -32,7 +32,7 @@ export default class Bluesky {
             return;
         } catch (e) {
             const message = vscode.window.showErrorMessage(
-                'Failed to login. Please check your configuration.',
+                locale('error-failed-login'),
                 context ? 'Set settings' : '',
                 'Retry'
             );
@@ -86,7 +86,7 @@ export default class Bluesky {
         });
 
         await this.login(context).then(() => {
-            vscode.window.showInformationMessage('Successfully logged in');
+            vscode.window.showInformationMessage(locale('success-login'));
         });
 
         return;
@@ -99,7 +99,7 @@ export default class Bluesky {
             });
             return timeline.data.feed;
         } catch (_) {
-            vscode.window.showErrorMessage('Failed to get timeline');
+            vscode.window.showErrorMessage(locale('error-failed-timeline'));
         }
     }
 
@@ -109,7 +109,7 @@ export default class Bluesky {
             await this.agent.updateSeenNotifications();
             return notification;
         } catch (_) {
-            vscode.window.showErrorMessage('Failed to get notification');
+            vscode.window.showErrorMessage(locale('error-failed-notification'));
         }
     }
 
@@ -131,7 +131,7 @@ export default class Bluesky {
                 langs: [lang],
             });
         } catch (_) {
-            vscode.window.showErrorMessage('Failed to create new post');
+            vscode.window.showErrorMessage(locale('error-failed-post'));
         }
     }
 
@@ -139,7 +139,7 @@ export default class Bluesky {
         try {
             await this.agent.like(uri, cid);
         } catch (_) {
-            vscode.window.showErrorMessage('Failed to like');
+            vscode.window.showErrorMessage(locale('error-failed-like'));
         }
     }
 
@@ -156,7 +156,7 @@ export default class Bluesky {
                 posts: postData.data.feed,
             };
         } catch (_) {
-            vscode.window.showErrorMessage('Failed to get account info');
+            vscode.window.showErrorMessage(locale('error-failed-account'));
         }
     }
 }

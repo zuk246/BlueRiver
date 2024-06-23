@@ -22,6 +22,15 @@
     "command-desc-account": "Show the account information",
     "command-desc-settings": "Show the settings",
 
+    "error-failed-login": "Failed to login. Please check your configuration.",
+    "error-failed-timeline": "Failed to get timeline",
+    "error-failed-notification": "Failed to get notification",
+    "error-failed-post": "Failed to create new post",
+    "error-failed-like": "Failed to like post",
+    "error-failed-account": "Failed to get account info",
+
+    "success-login": "Successfully logged in",
+
     "setting-service": "Service URL",
     "setting-user": "Username or email address",
     "setting-password": "App password. The app password set in the official app is recommended.",
