@@ -44,7 +44,7 @@ const items: CommandItem[] = [
     {
         label: locale('command-name-settings'),
         description: locale('command-desc-settings'),
-        command: 'blueriver.setCredentials',
+        command: 'blueriver.settings',
         iconPath: new vscode.ThemeIcon('gear'),
     },
 ];
