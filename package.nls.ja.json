@@ -1,5 +1,6 @@
 {
     "command-list": "Bluesky: コマンド一覧",
+    "command-settings": "Bluesky: 設定",
     "command-timeline": "Bluesky: タイムライン",
     "command-notifications": "Bluesky: 通知",
     "command-like": "Bluesky: いいねをする",
@@ -32,6 +33,15 @@
     "app-post-select-lang": "投稿言語を選択",
     "app-post-done": "ポストに成功",
     "app-post-invalid": "ポストするテキストを入力してください。",
+
+    "app-timeline-repost": "がリポスト",
+
+    "app-notification-reply": "があなたのポストに返信しました",
+    "app-notification-repost": "があなたのポストをリポストしました",
+    "app-notification-like": "があなたのポストをいいねしました",
+    "app-notification-follow": "があなたをフォローしました",
+    "app-notification-mention": "があなたをメンションしました",
+    "app-notification-quote": "があなたのポストを引用しました",
 
     "app-profile-following": "フォロー中",
     "app-profile-followers": "フォロワー",

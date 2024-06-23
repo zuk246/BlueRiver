@@ -1,8 +1,10 @@
+import { locale } from '../locale';
+
 export const notifications_text = {
-    reply: 'replied to your post',
-    repost: 'reposted your post',
-    like: 'liked your post',
-    follow: 'followed you',
-    mention: 'mentioned you',
-    quote: 'quoted your post',
+    reply: locale('app-notification-reply'),
+    repost: locale('app-notification-repost'),
+    like: locale('app-notification-like'),
+    follow: locale('app-notification-follow'),
+    mention: locale('app-notification-mention'),
+    quote: locale('app-notification-quote'),
 };

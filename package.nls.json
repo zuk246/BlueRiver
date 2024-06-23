@@ -1,5 +1,6 @@
 {
     "command-list": "Bluesky: Command List",
+    "command-settings": "Bluesky: Settings",
     "command-timeline": "Bluesky: Timeline",
     "command-notifications": "Bluesky: Notifications",
     "command-like": "Bluesky: Like",
@@ -32,6 +33,15 @@
     "app-post-select-lang": "Select a language",
     "app-post-done": "Posted",
     "app-post-invalid": "Please enter a message.",
+
+    "app-timeline-repost": "reposted",
+
+    "app-notification-reply": "replied to your post",
+    "app-notification-repost": "reposted your post",
+    "app-notification-like": "liked your post",
+    "app-notification-follow": "followed you",
+    "app-notification-mention": "mentioned you",
+    "app-notification-quote": "quoted your post",
 
     "app-profile-following": "Following",
     "app-profile-followers": "Followers",

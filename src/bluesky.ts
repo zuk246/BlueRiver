@@ -1,58 +1,98 @@
 import { BskyAgent } from '@atproto/api';
 import * as vscode from 'vscode';
+import { SecretStorage } from 'vscode';
+import { locale } from './locale';
 
 export default class Bluesky {
     agent: BskyAgent;
-    configuration: vscode.WorkspaceConfiguration | undefined;
-    loginStatus: boolean = false;
+    secrets: SecretStorage | undefined;
+    public loginStatus: boolean = false;
 
-    constructor() {
-        this.configuration = vscode.workspace.getConfiguration('blueriver');
-
-        this.agent = new BskyAgent({
-            service: this.configuration.get('service') ?? 'https://bsky.social',
-        });
+    constructor(context: vscode.ExtensionContext) {
+        this.secrets = context.secrets;
     }
 
-    private resetConfiguration() {
-        this.configuration = vscode.workspace.getConfiguration('blueriver');
-    }
-
-    public async login() {
+    public async login(context?: vscode.ExtensionContext) {
         try {
-            await this.agent.login({
-                identifier: this.configuration?.get('user') ?? '',
-                password: this.configuration?.get('password') ?? '',
+            const identifier = (await this.secrets?.get('user')).toString();
+            const password = (await this.secrets?.get('password')).toString();
+
+            this.agent = new BskyAgent({
+                service:
+                    (await this.secrets?.get('service')).toString() ??
+                    'https://bsky.social',
             });
+
+            await this.agent.login({
+                identifier: identifier,
+                password: password,
+            });
+
             this.loginStatus = true;
             return;
         } catch (e) {
             const message = vscode.window.showErrorMessage(
                 'Failed to login. Please check your configuration.',
-                'Open settings',
+                context ? 'Set settings' : '',
                 'Retry'
             );
 
             message.then((value) => {
-                if (value === 'Open settings') {
-                    vscode.commands.executeCommand(
-                        'workbench.action.openSettings',
-                        'blueriver'
-                    );
+                if (value === 'Set settings' && !!context) {
+                    this.setCredentials(context);
                 }
                 if (value === 'Retry') {
-                    this.resetConfiguration();
-                    this.login();
+                    this.login(context);
                 }
             });
         }
     }
 
-    public async timeline() {
-        if (!this.loginStatus) {
-            await this.login();
-        }
+    public async setCredentials(context: vscode.ExtensionContext) {
+        this.secrets = context.secrets;
+        this.loginStatus = false;
 
+        const previousCredentials = {
+            service:
+                (await this.secrets?.get('service'))?.toString() ??
+                'https://bsky.social',
+            user: (await this.secrets?.get('user'))?.toString() ?? '',
+            password: (await this.secrets?.get('password'))?.toString() ?? '',
+        };
+
+        const service = await vscode.window.showInputBox({
+            title: locale('setting-service'),
+            placeHolder: locale('setting-service'),
+            value: previousCredentials.service,
+        });
+        const identifier = await vscode.window.showInputBox({
+            title: locale('setting-user'),
+            placeHolder: locale('setting-user'),
+            value: previousCredentials.user,
+        });
+        const password = await vscode.window.showInputBox({
+            title: locale('setting-password'),
+            placeHolder: locale('setting-password'),
+            password: true,
+            value: previousCredentials.password,
+        });
+
+        await this.secrets.store('service', service);
+        await this.secrets.store('user', identifier);
+        await this.secrets.store('password', password);
+
+        this.agent = new BskyAgent({
+            service: service ?? 'https://bsky.social',
+        });
+
+        await this.login(context).then(() => {
+            vscode.window.showInformationMessage('Successfully logged in');
+        });
+
+        return;
+    }
+
+    public async timeline() {
         try {
             const timeline = await this.agent.getTimeline({
                 limit: 60,
@@ -64,10 +104,6 @@ export default class Bluesky {
     }
 
     public async notification() {
-        if (!this.loginStatus) {
-            await this.login();
-        }
-
         try {
             const notification = await this.agent.listNotifications();
             await this.agent.updateSeenNotifications();
@@ -78,10 +114,6 @@ export default class Bluesky {
     }
 
     public async notificationCount() {
-        if (!this.loginStatus) {
-            await this.login();
-        }
-
         try {
             const notificationCount =
                 await this.agent.countUnreadNotifications();
@@ -92,10 +124,6 @@ export default class Bluesky {
     }
 
     public async post(text: string, lang: string) {
-        if (!this.loginStatus) {
-            await this.login();
-        }
-
         try {
             await this.agent.post({
                 text: text,
@@ -108,10 +136,6 @@ export default class Bluesky {
     }
 
     public async like(uri: string, cid: string) {
-        if (!this.loginStatus) {
-            await this.login();
-        }
-
         try {
             await this.agent.like(uri, cid);
         } catch (_) {
@@ -120,10 +144,6 @@ export default class Bluesky {
     }
 
     public async accountInfo() {
-        if (!this.loginStatus) {
-            await this.login();
-        }
-
         try {
             const accountInfo = await this.agent.getProfile({
                 actor: this.agent.session.did,

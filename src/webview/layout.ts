@@ -38,7 +38,6 @@ export default function webviewLayout(
         name: string;
         icon: IconType;
         command: string;
-        secondaryCommand?: string;
     }[] = [
         {
             name: locale('command-name-timeline'),
@@ -65,17 +64,14 @@ export default function webviewLayout(
         {
             name: locale('command-name-settings'),
             icon: 'settings',
-            command: 'workbench.action.openSettings',
-            secondaryCommand: 'blueriver',
+            command: 'blueriver.settings',
         },
     ];
 
     const sidebar = sidebarContent
         .map(
             (item) =>
-                `<button class="sidebar-item" id="${item.command} ${
-                    item.secondaryCommand
-                }">
+                `<button class="sidebar-item" id="${item.command}">
             ${icons(item.icon, 24)}
             <div class="sidebar-name">${item.name}</div>
         </button>`
@@ -87,8 +83,8 @@ export default function webviewLayout(
     webviewView.webview.onDidReceiveMessage((message) => {
         switch (message.command) {
             case 'sidebar':
-                const data = message.id.split(' ');
-                vscode.commands.executeCommand(data[0], data[1]);
+                const data = message.id;
+                vscode.commands.executeCommand(data);
                 return;
         }
     });

@@ -25,3 +25,4 @@ const localeTable = Object.assign(
 const localeString = (key: string): string => localeTable[key] || key;
 
 export const locale = (key: LocaleKeyType): string => localeString(key);
+export { localeTableKey as LocaleKey };
