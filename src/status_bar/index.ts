@@ -9,7 +9,9 @@ export default function showStatusBar(bluesky: Bluesky) {
     );
 
     status_bar.text = '$(bluesky-logo)';
-    status_bar.tooltip = 'Blueriver';
+    status_bar.tooltip = bluesky.loginStatus
+        ? `Login as ${bluesky.agent.session.handle}`
+        : 'BlueRiver';
     status_bar.name = 'Blueriver';
     status_bar.command = 'blueriver.list';
 
