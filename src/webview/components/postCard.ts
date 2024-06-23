@@ -1,8 +1,9 @@
 import { FeedViewPost } from '@atproto/api/dist/client/types/app/bsky/feed/defs';
 import { ViewExternal } from '@atproto/api/dist/client/types/app/bsky/embed/external';
 import { ViewImage } from '@atproto/api/dist/client/types/app/bsky/embed/images';
-import icons from './icons';
+import icons, { icons_svg } from './icons';
 import getRelativeTime from '../../utils/getRelativeTime';
+import { locale } from '../../locale';
 
 export default function getPostCardWebView(item: FeedViewPost) {
     const relativeTime = getRelativeTime(item.post.indexedAt);
@@ -17,6 +18,24 @@ export default function getPostCardWebView(item: FeedViewPost) {
     const likeIcon = icons('like', 16);
     const repostIcon = icons('repost', 16);
     const replyIcon = icons('reply', 16);
+    const reasonType = item.reason && item.reason.$type;
+    let reason: string = '';
+    let show: boolean = true;
+
+    switch (reasonType) {
+        case 'app.bsky.feed.defs#reasonRepost':
+            const text = locale('app-timeline-repost');
+            const icon = icons('repost', 16);
+            reason = `
+            <div class="timeline-item-reason-repost">
+                ${icon} 
+                <p>
+                    ${/* @ts-ignore */ ''}
+                    ${item.reason.by?.displayName} ${text}
+                </p>
+            </div>`;
+            break;
+    }
 
     if (external) {
         const url = new URL(external.uri).hostname;
@@ -46,6 +65,10 @@ export default function getPostCardWebView(item: FeedViewPost) {
         `;
     }
 
+    if (!show) {
+        return;
+    }
+
     return `
     <li class="timeline-item">
         <div class="timeline-item-first">
@@ -54,6 +77,7 @@ export default function getPostCardWebView(item: FeedViewPost) {
             }" alt="avatar" width="40" height="40" class="avatar-image" />
         </div>
         <div class="timeline-item-second">
+            ${reason}
             <div class="timeline-item-detail">
                 <p>${item.post.author.displayName}</p>
                 <div class="timeline-item-detail-post">
@@ -83,13 +107,19 @@ export default function getPostCardWebView(item: FeedViewPost) {
                         ${item.post.replyCount}
                     </p>
                 </div>
-                <div class="timeline-item-status-counter-item">
+                <div class="timeline-item-status-counter-item ${
+                    !!item.post.viewer.repost &&
+                    'timeline-item-status-counter-item-repost-active'
+                }">
                     ${repostIcon}
                     <p>
                         ${item.post.repostCount}
                     </p>
                 </div>
-                <div class="timeline-item-status-counter-item">
+                <div class="timeline-item-status-counter-item ${
+                    !!item.post.viewer.like &&
+                    'timeline-item-status-counter-item-like-active'
+                }">
                     ${likeIcon}
                     <p>
                         ${item.post.likeCount}
